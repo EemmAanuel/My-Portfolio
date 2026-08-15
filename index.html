@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Seth Designs — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="tech-bg">
+    <canvas id="gridCanvas"></canvas>
+  </div>
+
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <h1 class="hero-title">SETH DESIGNS</h1>
+    <p class="hero-sub">Visual designer</p>
+  </section>
+
+
+  <!-- STORY -->
+  <section id="story" class="story-pinned">
+
+    <div class="story-sticky">
+
+      <div class="story-counter">
+        <span id="countCurrent">01</span> / 03
+      </div>
+
+      <div class="story-label" id="storyLabel">
+        STRUCTURE
+      </div>
+
+      <span class="bg-num" id="bgNum">
+        01
+      </span>
+
+
+      <div class="story-track-wrap">
+
+        <div class="story-track" id="storyTrack">
+
+          <div class="story-card">
+            <p>
+              Every design starts with a system, not decoration.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <p>
+              Details are what separate work that's seen from work that's felt.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <p>
+              A design should feel alive, not static.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORISA PROJECT -->
+  <section id="work-orisa" class="orisa-immersive">
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="orisa-bg-video"
+    >
+      <source
+        src="https://orisa-iota.vercel.app/assets/orisa-hero.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+    <div class="orisa-overlay"></div>
+
+
+    <div class="orisa-content">
+
+      <span class="orisa-eyebrow">
+        01 — SELECTED WORK
+      </span>
+
+      <h2 class="orisa-title">
+        O R Í S A
+      </h2>
+
+      <p class="orisa-sub">
+        A Taste of Africa, <em>Reimagined.</em>
+      </p>
+
+      <a
+        href="https://orisa-iota.vercel.app"
+        target="_blank"
+        class="orisa-link"
+      >
+        Visit Site ↗
+      </a>
+
+    </div>
+
+
+    <div class="orisa-beats">
+
+      <div class="orisa-beat">
+
+        <span class="orisa-beat-num">
+          01
+        </span>
+
+        <h3>
+          Rooted in <em>Yorùbá.</em>
+        </h3>
+
+        <p>
+          A Yorùbá restaurant concept needed a digital presence as refined as the food itself.
+        </p>
+
+      </div>
+
+
+      <div class="orisa-beat">
+
+        <span class="orisa-beat-num">
+          02
+        </span>
+
+        <h3>
+          The <em>Approach.</em>
+        </h3>
+
+        <p>
+          Cinematic video hero, editorial typography, a menu that reads like a story instead of a list.
+        </p>
+
+      </div>
+
+
+      <div class="orisa-beat">
+
+        <span class="orisa-beat-num">
+          03
+        </span>
+
+        <h3>
+          More than <em>a meal.</em>
+        </h3>
+
+        <p>
+          A site that feels like an experience, not just information.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GRAPHIC DESIGN -->
+  <section id="work-graphic" class="graphic-gallery">
+
+    <div class="gallery-header">
+
+      <span class="case-label-alt">
+        02 — SELECTED WORK
+      </span>
+
+      <h2 class="gallery-title">
+        Graphic Design
+      </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+      <!-- DASH KARAOKE 1 -->
+      <div
+        class="gallery-item"
+        data-img="dash-karaoke-1.jpg"
+        data-story="Weekly open-mic night at Dash Kulture Restaurant & Lounge — where Wednesdays become a live stage for emerging talent. Built with bold typography, neon gradients, and high-contrast grid design to reflect the pulse of nightlife and performance energy."
+      >
+
+        <img
+          src="dash-karaoke-1.jpg"
+          alt="Dash Kulture Karaoke Night flyer"
+        >
+
+        <span class="gallery-tag">
+          Dash Kulture
+        </span>
+
+      </div>
+
+
+      <!-- DASH RAVE -->
+      <div
+        class="gallery-item"
+        data-img="dash-rave.jpg"
+        data-story="Every great party starts with a feeling. This design captures that moment of anticipation — the lights, the sound, and the promise of an unforgettable night."
+      >
+
+        <img
+          src="dash-rave.jpg"
+          alt="ABK Rave Party flyer"
+        >
+
+        <span class="gallery-tag">
+          Dash Kulture
+        </span>
+
+      </div>
+
+
+      <!-- DASH KARAOKE 2 -->
+      <div
+        class="gallery-item"
+        data-img="dash-karaoke-2.jpg"
+        data-story="Expressive textures, bold branding, and a high-impact color palette come together in a campaign that instantly communicates celebration, performance, and nightlife culture."
+      >
+
+        <img
+          src="dash-karaoke-2.jpg"
+          alt="Dash Kulture Karaoke Night flyer v2"
+        >
+
+        <span class="gallery-tag">
+          Dash Kulture
+        </span>
+
+      </div>
+
+
+      <!-- FITTED ELEGANCE -->
+      <div
+        class="gallery-item"
+        data-img="fitted-elegance.jpg"
+        data-story="Every outfit begins with an idea, and every stitch tells a story. Designed to reflect the brand's dedication to transforming creative concepts into elegant garments, blending modern aesthetics with clear communication."
+      >
+
+        <img
+          src="fitted-elegance.jpg"
+          alt="Fitted Elegance fashion brand flyer"
+        >
+
+        <span class="gallery-tag">
+          Fitted Elegance
+        </span>
+
+      </div>
+
+
+      <!-- CLARAS TREAT -->
+      <div
+        class="gallery-item"
+        data-img="claras-treat.jpg"
+        data-story="Premium food imagery paired with clean typography and a thoughtfully organized layout — designed to communicate quality, variety, and professionalism while encouraging customer engagement."
+      >
+
+        <img
+          src="claras-treat.jpg"
+          alt="Clara's Yummy Treat bakery flyer"
+        >
+
+        <span class="gallery-tag">
+          Clara's Yummy Treat
+        </span>
+
+      </div>
+
+
+      <!-- KAYLIFAZ -->
+      <div
+        class="gallery-item"
+        data-img="kaylifaz.jpg"
+        data-story="Developed to strengthen the brand's presence in fashion, combining premium product imagery, bold typography, and a warm color palette with a clear visual hierarchy for an engaging, conversion-focused advertisement."
+      >
+
+        <img
+          src="kaylifaz.jpg"
+          alt="Kay'Lifaz Stitches fashion flyer"
+        >
+
+        <span class="gallery-tag">
+          Kay'Lifaz Stitches
+        </span>
+
+      </div>
+
+
+      <!-- SMARTMOUTH -->
+      <div
+        class="gallery-item"
+        data-img="smartmouth.jpg"
+        data-story="In today's digital world, visibility is the foundation of growth. This design tells the story of a brand helping businesses expand their online presence — crafted to reinforce progress, connectivity, and measurable success."
+      >
+
+        <img
+          src="smartmouth.jpg"
+          alt="Smartmouth Hub services flyer"
+        >
+
+        <span class="gallery-tag">
+          Smartmouth Hub
+        </span>
+
+      </div>
+
+
+      <!-- JOPAPRIDE -->
+      <div
+        class="gallery-item"
+        data-img="jopapride.jpg"
+        data-story="A corporate birthday tribute balancing elegance with brand identity — a refined neutral palette, layered photography, and clean typography that feels both personal and professional."
+      >
+
+        <img
+          src="jopapride.jpg"
+          alt="Jopapride Nigeria birthday tribute flyer"
+        >
+
+        <span class="gallery-tag">
+          Jopapride
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <span class="contact-label">
+      03 — LET'S CONNECT
+    </span>
+
+    <h2 class="contact-title">
+      Let's build<br>
+      something.
+    </h2>
+
+
+    <div class="contact-links">
+
+      <a
+        href="https://github.com/EemmAanuel"
+        target="_blank"
+        class="contact-link"
+      >
+        <span>GitHub</span>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/lordseth20k"
+        target="_blank"
+        class="contact-link"
+      >
+        <span>Instagram</span>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+
+      <a
+        href="https://wa.me/2347013123287"
+        target="_blank"
+        class="contact-link"
+      >
+        <span>WhatsApp</span>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+    </div>
+
+
+    <p class="contact-footer">
+      Seth Designs © 2026
+    </p>
+
+  </section>
+
+
+  <!-- LIGHTBOX -->
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+    >
+      ✕
+    </button>
+
+
+    <div class="lightbox-content">
+
+      <img
+        id="lightboxImg"
+        src=""
+        alt=""
+      >
+
+      <p id="lightboxStory"></p>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
