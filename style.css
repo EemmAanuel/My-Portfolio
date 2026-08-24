@@ -431,3 +431,112 @@ body {
   font-size: 0.8rem;
   letter-spacing: 0.05em;
 }
+/* ========================================
+   BILTOP PROJECT
+======================================== */
+
+.biltop-project {
+  min-height: 100vh;
+  padding: 8rem 8vw;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5vw;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.biltop-image-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #111;
+}
+
+.biltop-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.biltop-content {
+  max-width: 500px;
+}
+
+.biltop-eyebrow {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 1.5rem;
+}
+
+.biltop-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.biltop-sub {
+  margin-top: 1rem;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  color: #d8d8d8;
+}
+
+.biltop-description {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+.biltop-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.biltop-meta span {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.45rem 0.75rem;
+  border-radius: 30px;
+  color: #cfcfcf;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.biltop-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 3px;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.biltop-link:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+
+  .biltop-project {
+    min-height: auto;
+    padding: 6rem 8vw;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .biltop-content {
+    max-width: 100%;
+  }
+
+  .biltop-title {
+    font-size: clamp(3rem, 18vw, 5rem);
+  }
