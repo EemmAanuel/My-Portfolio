@@ -48,7 +48,7 @@ const capabilities = [
 const projects = [
   {
     name: "Biltop",
-    year: "2025",
+    year: "2026",
     role: "Product Design · Brand · Web",
     blurb:
       "A construction-tech platform rebuilt around clarity: a modular design system, a calmer dashboard, and a site that sells the product before a single demo call.",
@@ -176,18 +176,18 @@ function Hero() {
 
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 md:px-12 md:pb-20"
+        className="relative z-10 flex h-full flex-col justify-end px-5 pb-12 sm:px-6 md:px-12 md:pb-20"
       >
-        <p className="mb-6 text-xs uppercase tracking-[0.35em] text-muted-foreground">
+        <p className="mb-4 text-[0.625rem] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs sm:tracking-[0.35em] md:mb-6">
           Seth Designs — Portfolio 2026
         </p>
-        <h1 className="max-w-5xl font-display text-[clamp(2.75rem,9vw,8rem)] font-semibold leading-[0.92] tracking-tight">
+        <h1 className="max-w-5xl font-display text-[clamp(2.5rem,12vw,8rem)] font-semibold leading-[0.95] tracking-tight sm:leading-[0.92]">
           Digital
           <span className="text-primary"> experience</span>
           <br />
           designer.
         </h1>
-        <div className="mt-8 flex flex-wrap items-end justify-between gap-6 border-t border-border pt-6">
+        <div className="mt-6 flex flex-col items-start gap-5 border-t border-border pt-5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-6 sm:pt-6">
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
             I design interfaces, brand systems and interactive web experiences — shaped by
             typography, motion and a stubborn attention to detail.
@@ -229,24 +229,24 @@ function Marquee() {
 
 function SectionTitle({ index, title }: { index: string; title: string }) {
   return (
-    <div className="mb-12 flex items-baseline gap-5 border-b border-border pb-5">
-      <span className="text-xs tracking-[0.3em] text-primary">{index}</span>
-      <h2 className="font-display text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2>
+    <div className="mb-8 flex items-baseline gap-3 border-b border-border pb-4 sm:gap-5 sm:pb-5 md:mb-12">
+      <span className="shrink-0 text-[0.625rem] tracking-[0.3em] text-primary sm:text-xs">{index}</span>
+      <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl md:text-5xl">{title}</h2>
     </div>
   );
 }
 
 function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-28 md:px-12">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-16 sm:px-6 md:px-12 md:py-28">
       <SectionTitle index="01" title="About" />
-      <div className="grid gap-14 md:grid-cols-[1.2fr_1fr]">
+      <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
         <Reveal>
-          <p className="font-display text-2xl leading-snug tracking-tight md:text-4xl">
+          <p className="font-display text-xl leading-snug tracking-tight sm:text-2xl md:text-4xl">
             I help teams turn complicated products into experiences that feel obvious, quick and
             quietly premium.
           </p>
-          <p className="mt-8 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:mt-8 md:text-base">
             My work sits between product design and art direction — systems thinking on one side,
             typography and motion on the other. Lately I've been building interfaces that live in
             three dimensions: scroll-driven narratives, real-time 3D and interactions that reward
@@ -275,17 +275,17 @@ function ProjectCard({ p, i }: { p: (typeof projects)[number]; i: number }) {
       <article
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        className="group relative grid gap-6 border-b border-border py-10 md:grid-cols-[auto_1fr_auto] md:items-start md:gap-12"
+        className="group relative grid gap-4 border-b border-border py-8 md:grid-cols-[auto_1fr_auto] md:items-start md:gap-12 md:py-10"
       >
-        <span className="text-xs tracking-[0.3em] text-muted-foreground">{p.year}</span>
-        <div>
-          <h3 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
+        <span className="text-[0.625rem] tracking-[0.3em] text-muted-foreground sm:text-xs">{p.year}</span>
+        <div className="min-w-0">
+          <h3 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl md:text-6xl">
             <span className={hover ? "text-primary transition-colors" : "transition-colors"}>
               {p.name}
             </span>
           </h3>
-          <p className="mt-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">{p.role}</p>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          <p className="mt-2 text-[0.625rem] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs sm:tracking-[0.25em]">{p.role}</p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mt-5 md:text-base">
             {p.blurb}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
@@ -308,9 +308,9 @@ function ProjectCard({ p, i }: { p: (typeof projects)[number]; i: number }) {
 function BiltopPreview() {
   return (
     <Reveal>
-      <div className="mt-12">
+      <div className="mt-10 md:mt-12">
         <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+          <p className="text-[0.625rem] uppercase tracking-[0.25em] text-muted-foreground sm:text-xs">
             Live preview — Biltop
           </p>
           <a
@@ -336,7 +336,7 @@ function BiltopPreview() {
             src="https://biltop-landing.vercel.app/"
             title="Biltop live website preview"
             loading="lazy"
-            className="h-[420px] w-full border-0 bg-background md:h-[620px]"
+            className="h-[300px] w-full border-0 bg-background sm:h-[420px] md:h-[620px]"
           />
         </div>
       </div>
@@ -346,7 +346,7 @@ function BiltopPreview() {
 
 function Work() {
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-28 md:px-12">
+    <section id="work" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-16 sm:px-6 md:px-12 md:py-28">
       <SectionTitle index="02" title="Selected work" />
       {projects.map((p, i) => (
         <ProjectCard key={p.name} p={p} i={i} />
@@ -359,35 +359,45 @@ function Work() {
 function Gallery() {
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0.4, 0.85], ["2%", "-18%"]);
+
+  const renderArtwork = (g: (typeof gallery)[number], mobile = false) => (
+    <div
+      key={g.id}
+      className={
+        mobile
+          ? "group relative aspect-[3/4] min-w-0 overflow-hidden rounded-sm border border-border"
+          : "group relative aspect-[3/4] w-[38vw] shrink-0 overflow-hidden rounded-sm border border-border lg:w-[22vw]"
+      }
+    >
+      <img
+        src={g.src}
+        alt={g.alt}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-100 transition-opacity duration-500 md:opacity-80 md:group-hover:opacity-100" />
+      <div className="absolute inset-x-0 bottom-0 p-4">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3">
+          <span className="min-w-0 truncate font-display text-sm tracking-tight">{g.label}</span>
+          <span className="shrink-0 text-xs text-muted-foreground">0{g.id}/08</span>
+        </div>
+        <p className="mt-2 max-h-32 overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-100 transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-32 md:group-hover:opacity-100">
+          {g.story}
+        </p>
+      </div>
+    </div>
+  );
+
   return (
-    <section id="gallery" className="py-28">
-      <div className="mx-auto max-w-6xl px-6 md:px-12">
+    <section id="gallery" className="scroll-mt-16 overflow-hidden py-16 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-12">
         <SectionTitle index="03" title="Graphic studies" />
       </div>
-      <motion.div style={{ x }} className="flex gap-5 px-6 md:px-12">
-        {gallery.map((g) => (
-          <div
-            key={g.id}
-            className="group relative aspect-[3/4] w-[62vw] shrink-0 overflow-hidden rounded-sm border border-border sm:w-[38vw] lg:w-[22vw]"
-          >
-            <img
-              src={g.src}
-              alt={g.alt}
-              loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
-            <div className="absolute inset-x-0 bottom-0 p-4">
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-sm tracking-tight">{g.label}</span>
-                <span className="text-xs text-muted-foreground">0{g.id}/08</span>
-              </div>
-              <p className="mt-2 max-h-0 overflow-hidden text-xs leading-relaxed text-muted-foreground opacity-0 transition-all duration-500 group-hover:max-h-32 group-hover:opacity-100">
-                {g.story}
-              </p>
-            </div>
-          </div>
-        ))}
+      <div className="grid min-w-0 grid-cols-1 gap-5 px-5 sm:grid-cols-2 sm:px-6 md:hidden">
+        {gallery.map((g) => renderArtwork(g, true))}
+      </div>
+      <motion.div style={{ x }} className="hidden gap-5 px-12 md:flex">
+        {gallery.map((g) => renderArtwork(g))}
       </motion.div>
     </section>
   );
@@ -395,15 +405,15 @@ function Gallery() {
 
 function Experience() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-28 md:px-12">
+    <section className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:px-12 md:py-28">
       <SectionTitle index="04" title="Experience" />
       <div className="divide-y divide-border">
         {experience.map((e, i) => (
           <Reveal key={e.role} delay={i * 0.08}>
-            <div className="grid gap-2 py-6 md:grid-cols-[180px_1fr_auto] md:items-baseline">
-              <span className="text-xs tracking-[0.25em] text-primary">{e.period}</span>
-              <h3 className="font-display text-xl tracking-tight md:text-2xl">{e.role}</h3>
-              <span className="text-sm text-muted-foreground">{e.place}</span>
+            <div className="grid min-w-0 gap-2 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-x-6 md:grid-cols-[180px_minmax(0,1fr)_minmax(0,auto)] md:items-baseline">
+              <span className="text-[0.625rem] tracking-[0.2em] text-primary sm:text-xs sm:tracking-[0.25em]">{e.period}</span>
+              <h3 className="min-w-0 font-display text-lg leading-snug tracking-tight sm:text-xl md:text-2xl">{e.role}</h3>
+              <span className="min-w-0 text-sm leading-relaxed text-muted-foreground sm:col-start-2 md:col-start-auto">{e.place}</span>
             </div>
           </Reveal>
         ))}
@@ -414,11 +424,11 @@ function Experience() {
 
 function Contact() {
   return (
-    <footer id="contact" className="border-t border-border bg-secondary/30">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:px-12">
+    <footer id="contact" className="scroll-mt-16 border-t border-border bg-secondary/30">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:px-12 md:py-24">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">05 — Contact</p>
-          <h2 className="mt-6 font-display text-[clamp(2.25rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-tight">
+          <p className="text-[0.625rem] uppercase tracking-[0.28em] text-muted-foreground sm:text-xs sm:tracking-[0.35em]">05 — Contact</p>
+          <h2 className="mt-5 max-w-full font-display text-[2rem] font-semibold leading-[1.02] tracking-tight sm:mt-6 sm:text-5xl md:text-[5.5rem] md:leading-[0.95]">
             Let's build something
             <span className="text-primary"> worth scrolling.</span>
           </h2>
@@ -426,11 +436,11 @@ function Contact() {
             href="https://wa.me/2347013123287"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center gap-3 border-b border-primary pb-1 text-lg text-primary transition-opacity hover:opacity-70 md:text-2xl"
+            className="mt-8 inline-grid max-w-full grid-cols-[auto_minmax(0,1fr)] items-center gap-3 border-b border-primary pb-1 text-base text-primary transition-opacity hover:opacity-70 sm:text-lg md:mt-10 md:text-2xl"
           >
-            <MessageCircle className="h-5 w-5" /> Message me on WhatsApp
+            <MessageCircle className="h-5 w-5 shrink-0" /> <span>Message me on WhatsApp</span>
           </a>
-          <div className="mt-12 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+          <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-4 text-sm text-muted-foreground sm:mt-12 sm:flex sm:flex-wrap sm:items-center sm:gap-6">
             <a
               href="https://github.com/EemmAanuel"
               target="_blank"
@@ -456,7 +466,7 @@ function Contact() {
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
           </div>
-          <p className="mt-16 text-xs text-muted-foreground">
+          <p className="mt-12 text-xs text-muted-foreground sm:mt-16">
             © {new Date().getFullYear()} Seth Designs. Built with care.
           </p>
         </Reveal>
@@ -474,14 +484,14 @@ function Nav() {
   }, []);
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-40 flex items-center justify-between px-6 py-4 transition-colors md:px-12 ${
-        solid ? "bg-background/80 backdrop-blur-md" : ""
+      className={`fixed inset-x-0 top-0 z-40 grid min-h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-border/60 bg-background px-5 py-3 transition-colors sm:px-6 md:px-12 ${
+        solid ? "md:bg-background/80" : "md:border-transparent md:bg-transparent md:backdrop-blur-none"
       }`}
     >
-      <a href="#" className="font-display text-sm font-semibold tracking-[0.2em] uppercase">
+      <a href="#" className="min-w-0 truncate font-display text-sm font-semibold tracking-[0.2em] uppercase">
         Seth<span className="text-primary">.</span>
       </a>
-      <div className="flex gap-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="flex shrink-0 gap-4 text-[0.625rem] uppercase tracking-[0.16em] text-muted-foreground sm:gap-6 sm:text-xs sm:tracking-[0.2em]">
         <a href="#work" className="hover:text-foreground">Work</a>
         <a href="#about" className="hidden hover:text-foreground sm:inline">About</a>
         <a href="#contact" className="hover:text-foreground">Contact</a>
