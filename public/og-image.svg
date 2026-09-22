@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#111111"/>
-  <text x="80" y="290" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">SETH DESIGNS</text>
-  <text x="80" y="370" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="34">DIGITAL EXPERIENCE DESIGNER</text>
+  <rect x="72" y="72" width="486" height="486" rx="72" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <text x="315" y="430" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="360" font-weight="700">S</text>
+  <text x="620" y="295" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">SETH DESIGNS</text>
+  <text x="620" y="365" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="32">DIGITAL EXPERIENCE DESIGNER</text>
+  <text x="620" y="430" fill="#777777" font-family="Arial, Helvetica, sans-serif" font-size="22">Portfolio 2026</text>
 </svg>
