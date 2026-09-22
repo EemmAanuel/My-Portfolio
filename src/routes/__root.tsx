@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Seth Designs — Digital Experience Designer" },
+      { name: "description", content: "Seth Designs — Digital Experience Designer. Interfaces, brand systems and interactive web experiences." },
+      { name: "author", content: "Seth Designs" },
+      { property: "og:title", content: "Seth Designs — Digital Experience Designer" },
+      { property: "og:description", content: "Interfaces, brand systems and interactive web experiences." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://my-portfolio-gilt-ten-63.vercel.app/" },
+      { property: "og:image", content: "https://raw.githubusercontent.com/EemmAanuel/My-Portfolio/main/src/assets/gallery/fitted-elegance.jpg" },
+      { property: "og:image:alt", content: "Seth Designs portfolio work" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { name: "twitter:title", content: "Seth Designs — Digital Experience Designer" },
+      { name: "twitter:description", content: "Interfaces, brand systems and interactive web experiences." },
+      { name: "twitter:image", content: "https://raw.githubusercontent.com/EemmAanuel/My-Portfolio/main/src/assets/gallery/fitted-elegance.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      
     ],
     links: [
       {
