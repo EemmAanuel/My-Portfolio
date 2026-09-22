@@ -23,15 +23,22 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Seth, a digital experience designer crafting interfaces, brand systems and interactive 3D web experiences.",
+          "Seth Designs — Digital Experience Designer. Interfaces, brand systems and interactive web experiences.",
       },
       { property: "og:title", content: "Seth Designs — Digital Experience Designer" },
       {
         property: "og:description",
         content:
-          "Interfaces, brand systems and interactive 3D web experiences. Selected work, process and contact.",
+          "Interfaces, brand systems and interactive web experiences. Selected work, process and contact.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://my-portfolio-gilt-ten-63.vercel.app/" },
+      { property: "og:image", content: "https://raw.githubusercontent.com/EemmAanuel/My-Portfolio/main/src/assets/gallery/fitted-elegance.jpg" },
+      { property: "og:image:alt", content: "Seth Designs portfolio work" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { name: "twitter:title", content: "Seth Designs — Digital Experience Designer" },
+      { name: "twitter:description", content: "Interfaces, brand systems and interactive web experiences." },
+      { name: "twitter:image", content: "https://raw.githubusercontent.com/EemmAanuel/My-Portfolio/main/src/assets/gallery/fitted-elegance.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
