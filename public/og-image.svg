@@ -2,7 +2,8 @@
   <rect width="1200" height="630" fill="#111111"/>
   <rect x="72" y="72" width="486" height="486" rx="72" fill="none" stroke="#ffffff" stroke-width="8"/>
   <text x="315" y="430" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="360" font-weight="700">S</text>
-  <text x="620" y="295" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">SETH DESIGNS</text>
-  <text x="620" y="365" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="32">DIGITAL EXPERIENCE DESIGNER</text>
-  <text x="620" y="430" fill="#777777" font-family="Arial, Helvetica, sans-serif" font-size="22">Portfolio 2026</text>
+  <text x="620" y="280" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="700">SETH</text>
+  <text x="620" y="350" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="32">DIGITAL EXPERIENCE</text>
+  <text x="620" y="400" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="32">DESIGNER</text>
+  <text x="620" y="465" fill="#777777" font-family="Arial, Helvetica, sans-serif" font-size="22">Portfolio 2026</text>
 </svg>
