@@ -12,18 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  nitro: {
-    cloudflare: {
-      wrangler: {
-        d1_databases: [
-          {
-            binding: "BOOKINGS_DB",
-            database_name: "seth-portfolio-bookings",
-            database_id: process.env["CLOUDFLARE_D1_DATABASE_ID"] ?? "local",
-            migrations_dir: "../../migrations",
-          },
-        ],
-      },
-    },
-  } as never,
 });
