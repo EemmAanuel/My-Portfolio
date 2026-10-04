@@ -3,16 +3,18 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Seth - Digital Experience Designer" },
+      { title: "Seth — Digital Experience Designer & Developer in Lagos, Nigeria" },
       {
         name: "description",
         content:
-          "Seth - Digital Experience Designer. Selected product, brand, campaign, and interactive web work.",
+          "Graphic designer, website developer, and software developer in Lagos, Nigeria creating digital experiences that help ideas become visible, accessible, and useful.",
       },
-      { property: "og:title", content: "Seth - Digital Experience Designer" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Seth — Digital Experience Designer & Developer in Lagos, Nigeria" },
       {
         property: "og:description",
-        content: "Selected product, brand, campaign, and interactive web work by Seth.",
+        content:
+          "Graphic designer, website developer, and software developer in Lagos, Nigeria creating digital experiences that help ideas become visible, accessible, and useful.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://my-portfolio-gilt-ten-63.vercel.app/" },
@@ -20,11 +22,12 @@ export const Route = createFileRoute("/")({
         property: "og:image",
         content: "https://my-portfolio-gilt-ten-63.vercel.app/og-image.svg?v=20261002",
       },
-      { property: "og:image:alt", content: "Seth - Digital Experience Designer" },
-      { name: "twitter:title", content: "Seth - Digital Experience Designer" },
+      { property: "og:image:alt", content: "Seth — Digital Experience Designer & Developer in Lagos, Nigeria" },
+      { name: "twitter:title", content: "Seth — Digital Experience Designer & Developer in Lagos, Nigeria" },
       {
         name: "twitter:description",
-        content: "Selected product, brand, campaign, and interactive web work by Seth.",
+        content:
+          "Graphic designer, website developer, and software developer in Lagos, Nigeria creating digital experiences that help ideas become visible, accessible, and useful.",
       },
       {
         name: "twitter:image",
@@ -32,6 +35,7 @@ export const Route = createFileRoute("/")({
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://my-portfolio-gilt-ten-63.vercel.app/" }],
   }),
   component: Index,
 });
