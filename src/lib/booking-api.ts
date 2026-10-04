@@ -69,7 +69,19 @@ const budgetTiers: Record<string, { label: string; amount: number } | null> = {
   unsure: null,
 };
 
-const designServices: Record<string, { minimum: number; core: string[]; expanded: string[] }> = {
+const exactBudgetRanges: Record<string, [number, number]> = {
+  under_25k: [1000, 24999],
+  "25k_50k": [25000, 50000],
+  "50k_100k": [50001, 100000],
+  "100k_250k": [100001, 250000],
+  "250k_500k": [250001, 499999],
+  over_500k: [500000, 50000000],
+};
+
+const designServices: Record<
+  string,
+  { minimum: number; core: string[]; expanded: string[]; underMinimum?: string[] }
+> = {
   "Social Media Design": {
     minimum: 5000,
     core: ["One custom social media post design", "One revision round", "Final web-ready export"],
@@ -140,50 +152,87 @@ const designServices: Record<string, { minimum: number; core: string[]; expanded
   },
   "Logo Design": {
     minimum: 20000,
-    core: ["One initial logo direction", "One revision round", "Final logo export after approval"],
+    underMinimum: [
+      "One primary logo concept for review",
+      "No alternate logo versions or production-ready exports at this budget",
+      "A revised quote is needed to include final logo files",
+    ],
+    core: [
+      "One approved primary logo version; zero alternate versions",
+      "One revision round",
+      "Primary logo delivered as SVG and transparent PNG files",
+    ],
     expanded: [
-      "Two logo directions",
+      "Two initial logo directions, with one selected primary logo",
+      "One alternate logo lockup (one primary + one alternate; two versions total)",
       "Two revision rounds",
-      "Primary and alternate logo exports",
-      "Basic usage notes",
+      "Primary and alternate versions each delivered as SVG and transparent PNG files",
+      "One-page logo usage note",
     ],
   },
   "Logo + Basic Brand Kit": {
     minimum: 35000,
-    core: ["Logo design", "Basic color palette", "Two revision rounds", "Final logo exports"],
+    underMinimum: [
+      "One custom primary-logo direction tailored to your brief",
+      "One refinement round on the selected direction",
+      "One primary logo version; alternate lockups are excluded at this tier",
+      "Web-ready transparent PNG and JPG files for the approved primary logo",
+      "Color palette, typography pairing, and expanded brand assets are available in the full kit",
+    ],
+    core: [
+      "Two distinct logo concepts to choose from",
+      "One approved primary logo + one alternate lockup (two logo versions total)",
+      "Two refinement rounds on the selected logo direction",
+      "Curated brand color palette and typography pairing",
+      "Both logo versions delivered in SVG, transparent PNG, and JPG formats",
+      "One-page quick-start brand sheet with logo, colors, and type choices",
+    ],
     expanded: [
-      "Logo and alternate lockup",
-      "Color palette and typography",
-      "Three social templates",
-      "Basic brand guide",
+      "Three distinct logo concepts to choose from",
+      "One approved primary logo + two alternate lockups (three logo versions total)",
+      "Three refinement rounds on the selected logo direction",
+      "Extended color system with color values and a complete typography hierarchy",
+      "All three logo versions delivered in SVG, transparent PNG, and JPG formats",
+      "Three custom social media starter templates",
+      "Two-page mini brand guide with logo, color, and typography usage",
     ],
   },
   "Full Brand Identity": {
     minimum: 60000,
+    underMinimum: [
+      "One primary logo direction for review; no alternate logo versions",
+      "Initial color and typography direction",
+      "No complete brand identity system or production exports at this budget",
+      "A revised quote is needed for full identity development",
+    ],
     core: [
-      "Core logo system",
-      "Color and typography direction",
+      "One approved primary logo + one alternate lockup (two versions total)",
+      "Color palette and typography system",
+      "Primary and alternate logos delivered as SVG and transparent PNG files",
       "Two revision rounds",
-      "Basic brand guide",
+      "Basic brand guide with logo usage notes",
     ],
     expanded: [
-      "Full logo system and visual identity",
+      "One approved primary logo + two alternate lockups (three versions total)",
+      "Complete visual identity system",
       "Color and typography system",
+      "All three logo versions delivered as SVG and transparent PNG files",
       "Three branded templates",
-      "Brand guide and asset exports",
+      "Brand guide and organized asset exports",
     ],
   },
   "Starter Design Package": {
     minimum: 25000,
     core: [
-      "Logo",
-      "Business card",
+      "One primary logo version; zero alternate versions; SVG and transparent PNG exports",
+      "One business card design",
       "Two social media designs",
       "Basic color palette",
       "Two revision rounds",
     ],
     expanded: [
       "Starter identity package",
+      "One primary logo + one alternate lockup (two versions total), each in SVG and transparent PNG",
       "Three social media designs",
       "Basic brand guide",
       "Two revision rounds",
@@ -202,17 +251,18 @@ const designServices: Record<string, { minimum: number; core: string[]; expanded
   "Brand Starter": {
     minimum: 35000,
     core: [
-      "Logo",
+      "One primary logo version; zero alternate versions; SVG and transparent PNG exports",
       "Color palette",
-      "Typography",
+      "Typography pairing",
       "Three social media templates",
       "Basic brand guide",
     ],
     expanded: [
-      "Logo and alternate lockup",
+      "One primary logo + one alternate lockup (two versions total), each in SVG and transparent PNG",
       "Color and typography system",
       "Five social templates",
       "Expanded brand guide",
+      "Two revision rounds",
     ],
   },
 };
@@ -334,13 +384,29 @@ function getBudget(
   customValue?: unknown,
 ): { label: string; amount: number | null } | null {
   if (typeof value !== "string" || !Object.hasOwn(budgetTiers, value)) return null;
+  const hasExactAmount = customValue !== null && customValue !== undefined && customValue !== "";
+  const exactAmount = hasExactAmount ? Number(customValue) : null;
+  if (hasExactAmount && (!Number.isSafeInteger(exactAmount) || exactAmount! < 1000 || exactAmount! > 50000000))
+    return null;
   if (value === "custom") {
-    const amount = Number(customValue);
-    if (!Number.isSafeInteger(amount) || amount < 1000 || amount > 50000000) return null;
-    return { label: `Custom budget — ₦${amount.toLocaleString("en-NG")}`, amount };
+    if (exactAmount === null) return null;
+    return { label: `Custom budget — ₦${exactAmount.toLocaleString("en-NG")}`, amount: exactAmount };
+  }
+  if (value === "unsure") {
+    return exactAmount === null
+      ? { label: "Not sure yet", amount: null }
+      : { label: `Not sure yet · exact ₦${exactAmount.toLocaleString("en-NG")}`, amount: exactAmount };
   }
   const tier = budgetTiers[value];
-  if (!tier) return { label: "Not sure yet", amount: null };
+  if (!tier) return null;
+  if (exactAmount !== null) {
+    const range = exactBudgetRanges[value];
+    if (!range || exactAmount < range[0] || exactAmount > range[1]) return null;
+    return {
+      label: `${tier.label} · exact ₦${exactAmount.toLocaleString("en-NG")}`,
+      amount: exactAmount,
+    };
+  }
   return tier;
 }
 
@@ -363,7 +429,7 @@ function estimateFor(service: string, budget: { label: string; amount: number | 
     }
     const deliverables =
       amount < plan.minimum
-        ? [
+        ? plan.underMinimum ?? [
             "A reduced-scope concept or design direction",
             "Final production files and extended revisions are excluded at this budget",
           ]
@@ -377,7 +443,7 @@ function estimateFor(service: string, budget: { label: string; amount: number | 
       deliverables,
       notes:
         amount < plan.minimum
-          ? `The selected budget is below the usual ${service} starting price. The estimate is limited to early-stage design scope.`
+          ? `The selected budget is below the usual ${service} starting price. The listed starter deliverables reflect a reduced scope; additional deliverables can be quoted separately.`
           : "Scope is matched to the selected budget and remains subject to review.",
       status: "draft_estimate",
     };
@@ -511,7 +577,10 @@ function validInput(data: Record<string, unknown>): BookingInput | null {
   )
     return null;
 
-  const customBudget = budget === "custom" ? Number(data["customBudget"]) : null;
+  const customBudget =
+    data["customBudget"] === null || data["customBudget"] === undefined || data["customBudget"] === ""
+      ? null
+      : Number(data["customBudget"]);
   return { name, email, service, budget, customBudget, project, deadline };
 }
 

@@ -375,29 +375,69 @@ html.static-film .gslot img,html.static-film .biltop-art{transition:transform .8
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:rgb(255 143 107 / .7);box-shadow:0 0 0 4px rgb(255 143 107 / .12)}
 .field input[aria-invalid="true"], .field select[aria-invalid="true"], .field textarea[aria-invalid="true"]{border-color:rgba(255,120,120,.75)}
 .field-error{min-height:1rem;font-size:.72rem;color:#ffb4b4;margin:0}
+.field-hint{font-size:.72rem;line-height:1.45;color:var(--ink-4);margin:0}
 .form-actions{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.25rem;border-top:1px solid var(--rule);margin-top:1.25rem}
 .form-status{font-size:.85rem;color:var(--ink-6);margin:0}
 .form-status.success{color:#c8f5cf}
 .form-status.error{color:#ffb4b4}
-.estimate-preview{margin-top:1.25rem;padding:1.35rem;border:1px solid var(--rule);border-radius:1rem;background:linear-gradient(145deg,rgb(255 243 236 / .045),rgb(11 8 22 / .32));}
+.estimate-preview{margin-top:1.25rem;padding:clamp(.65rem,2.5vw,1.35rem);border:1px solid var(--rule);border-radius:1rem;background:rgb(255 243 236 / .035)}
 .estimate-preview[hidden]{display:none}
-.estimate-topline{display:flex;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--rule)}
-.estimate-kicker,.estimate-meta{font-size:max(.65rem,10px);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
-.estimate-preview h4{font:400 2rem/1 var(--serif);margin:.45rem 0 .6rem}
-.estimate-amount{font:400 clamp(1.7rem,4vw,2.3rem)/1 var(--serif);color:var(--key);margin:.65rem 0}
-.estimate-list{list-style:none;display:grid;gap:.45rem;padding:0;margin:.9rem 0 1rem;color:var(--ink-6);font-size:.85rem;line-height:1.5}
-.estimate-list li::before{content:"—";color:var(--key);margin-right:.55rem}
-.estimate-note{font-size:.74rem;line-height:1.5;color:var(--ink-4);margin:0}
+.estimate-document{max-width:760px;margin:0 auto;padding:clamp(1.1rem,4vw,2.5rem);background:#fbf9f5;color:#201b1b;border-radius:.45rem;box-shadow:0 1rem 3rem rgb(0 0 0 / .18);font-family:Arial,Helvetica,sans-serif}
+.estimate-topline{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid #ded8cf}
+.estimate-brand{display:flex;align-items:center;gap:.7rem;color:#201b1b}
+.estimate-brand-mark{display:grid;place-items:center;width:2.45rem;height:2.45rem;border:1px solid #e07c5e;border-radius:50%;font:italic 1.45rem/1 var(--serif);color:#c85e42}
+.estimate-brand-name{display:block;font:400 1.45rem/1 var(--serif);letter-spacing:-.04em}
+.estimate-brand-role{display:block;margin-top:.3rem;color:#766d67;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase}
+.estimate-document-tag{display:inline-flex;padding:.42rem .62rem;border:1px solid #d9a58f;border-radius:999px;color:#984d36;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.estimate-document-title{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;padding:1.55rem 0 1.2rem}
+.estimate-document-title h4{font:400 clamp(2rem,5vw,3rem)/1 var(--serif);letter-spacing:-.04em;margin:0;color:#201b1b}
+.estimate-kicker,.estimate-meta{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#766d67;margin:0}
+.estimate-kicker{margin-bottom:.45rem}
+.estimate-reference{text-align:right}
+.estimate-reference strong{display:block;margin-top:.4rem;color:#201b1b;font-size:.8rem;overflow-wrap:anywhere}
+.estimate-parties{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:1rem 0;border-top:1px solid #ded8cf;border-bottom:1px solid #ded8cf}
+.estimate-party-label{margin:0 0 .45rem;color:#8a8179;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.estimate-party-value{margin:0;color:#2c2724;font-size:.84rem;line-height:1.55;overflow-wrap:anywhere}
+.estimate-service-line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:start;padding:1.2rem 0;border-bottom:1px solid #ded8cf}
+.estimate-service-line h5{margin:0 0 .4rem;color:#201b1b;font-size:.9rem}
+.estimate-service-line p{margin:0;color:#766d67;font-size:.75rem;line-height:1.45}
+.estimate-amount{font:400 1.15rem/1.2 Arial,Helvetica,sans-serif;color:#201b1b;text-align:right;margin:0;white-space:nowrap}
+.estimate-scope{padding:1.1rem 0;border-bottom:1px solid #ded8cf}
+.estimate-scope h5{margin:0 0 .75rem;color:#766d67;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}
+.estimate-list{list-style:none;display:grid;gap:.55rem;padding:0;margin:0;color:#38322e;font-size:.77rem;line-height:1.5}
+.estimate-list li{display:flex;gap:.55rem;break-inside:avoid}
+.estimate-list li::before{content:"✓";color:#c85e42;font-weight:700}
+.estimate-total{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;padding:1rem 0 1.2rem}
+.estimate-total-label{margin:0 0 .35rem;color:#766d67;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}
+.estimate-total-note{margin:0;color:#8a8179;font-size:.68rem;line-height:1.4}
+.estimate-total-amount{font:400 clamp(1.4rem,4vw,2rem)/1 var(--serif);color:#201b1b;text-align:right;overflow-wrap:anywhere}
+.estimate-note{padding:.85rem 1rem;border-left:2px solid #c85e42;background:#f2eee8;color:#5e554e;font-size:.69rem;line-height:1.55;margin:0}
+.estimate-footer{display:flex;justify-content:space-between;gap:1rem;margin-top:1.2rem;padding-top:.75rem;border-top:1px solid #ded8cf;color:#8a8179;font-size:.59rem;line-height:1.45}
 .estimate-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
 .estimate-actions [hidden]{display:none!important}
+.estimate-download-status{flex-basis:100%;margin:0;color:var(--ink-4);font-size:.72rem;line-height:1.4}
 .custom-budget-field[hidden]{display:none}
 @media print{
+  @page{size:A4;margin:16mm}
+  html,body{min-width:0!important;background:#fff!important}
   body *{visibility:hidden!important}
+  .inquiry-modal{display:block!important;position:static!important;padding:0!important;background:transparent!important}
+  .inquiry-panel{width:auto!important;max-height:none!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+  .form-shell{padding:0!important}
   #estimatePreview,#estimatePreview *{visibility:visible!important}
-  #estimatePreview{display:block!important;position:absolute;inset:0;width:100%;border:0;border-radius:0;background:#fff;color:#111;padding:2rem;font-family:Arial,sans-serif}
-  #estimatePreview h4,.estimate-amount{color:#111}
-  #estimatePreview .estimate-kicker,#estimatePreview .estimate-meta,#estimatePreview .estimate-list,#estimatePreview .estimate-note{color:#333}
-  #estimatePreview .estimate-actions{display:none}
+  #estimatePreview{display:block!important;position:absolute!important;inset:0 auto auto 0!important;width:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:#fff!important}
+  #estimatePreview .estimate-document{max-width:none;padding:0;background:#fff;box-shadow:none;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #estimatePreview .estimate-topline,#estimatePreview .estimate-parties,#estimatePreview .estimate-service-line,#estimatePreview .estimate-scope,#estimatePreview .estimate-total,#estimatePreview .estimate-footer{break-inside:avoid}
+  #estimatePreview .estimate-actions{display:none!important}
+}
+@media(max-width:520px){
+  .estimate-topline{align-items:flex-start}
+  .estimate-document-tag{font-size:.5rem;padding:.35rem .45rem}
+  .estimate-brand-role{font-size:.5rem}
+  .estimate-parties{grid-template-columns:1fr}
+  .estimate-document-title{align-items:flex-start}
+  .estimate-reference strong{max-width:10rem}
+  .estimate-footer{flex-direction:column}
 }
 @media (max-width: 900px){
   .digital-grid,.pricing-grid,.package-grid,.experience-grid{grid-template-columns:1fr}
@@ -867,7 +907,7 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
             <p class="field-error" data-error-for="service" aria-live="polite"></p>
           </div>
           <div class="field full">
-            <label for="budgetRange">What's your estimated budget?</label>
+            <label for="budgetRange">What's your estimated budget range?</label>
             <select id="budgetRange" name="budget" aria-invalid="false" required>
               <option value="">Select your budget</option>
               <option value="under_25k">Under ₦25,000</option>
@@ -882,8 +922,9 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
             <p class="field-error" data-error-for="budget" aria-live="polite"></p>
           </div>
           <div class="field full custom-budget-field" id="customBudgetField" hidden>
-            <label for="customBudget">Your exact budget in naira</label>
-            <input id="customBudget" name="customBudget" type="number" inputmode="numeric" min="1000" max="50000000" step="1000" aria-invalid="false">
+            <label for="customBudget" id="customBudgetLabel">Your exact amount in naira (optional)</label>
+            <input id="customBudget" name="customBudget" type="number" inputmode="numeric" min="1000" max="50000000" step="1" placeholder="e.g. 35000" aria-invalid="false">
+            <p class="field-hint" id="customBudgetHint">Add an exact amount to tailor the draft estimate, or leave this blank to use the selected range.</p>
             <p class="field-error" data-error-for="customBudget" aria-live="polite"></p>
           </div>
           <div class="field full">
@@ -898,21 +939,64 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
           </div>
         </div>
         <section class="estimate-preview" id="estimatePreview" aria-live="polite" aria-labelledby="estimateTitle" hidden>
-          <div class="estimate-topline">
-            <div>
-              <p class="estimate-kicker" id="estimateKicker">Budget-aligned draft estimate</p>
-              <h4 id="estimateTitle">Project estimate</h4>
+          <article class="estimate-document">
+            <header class="estimate-topline">
+              <div class="estimate-brand" aria-label="Seth, Digital Experience Designer">
+                <span class="estimate-brand-mark" aria-hidden="true">S</span>
+                <span><span class="estimate-brand-name">Seth</span><span class="estimate-brand-role">Digital Experience Designer</span></span>
+              </div>
+              <span class="estimate-document-tag">Draft · Not payable</span>
+            </header>
+            <div class="estimate-document-title">
+              <div>
+                <p class="estimate-kicker" id="estimateKicker">Preliminary project estimate</p>
+                <h4 id="estimateTitle">Project estimate</h4>
+              </div>
+              <div class="estimate-reference">
+                <p class="estimate-meta">Reference</p>
+                <strong id="estimateReference">PREVIEW</strong>
+              </div>
             </div>
-            <p class="estimate-meta" id="estimateReference"></p>
-          </div>
-          <p class="estimate-meta" id="estimateClient"></p>
-          <p class="estimate-meta" id="estimateService"></p>
-          <p class="estimate-amount" id="estimateAmount"></p>
-          <ul class="estimate-list" id="estimateDeliverables"></ul>
-          <p class="estimate-note" id="estimateNotes"></p>
+            <div class="estimate-parties">
+              <div>
+                <p class="estimate-party-label">Prepared for</p>
+                <p class="estimate-party-value" id="estimateClient"></p>
+              </div>
+              <div>
+                <p class="estimate-party-label">Estimate date</p>
+                <p class="estimate-party-value" id="estimateDate">Shown after your request is submitted</p>
+              </div>
+              <div>
+                <p class="estimate-party-label">Preferred deadline</p>
+                <p class="estimate-party-value" id="estimateDeadline">Add a deadline to your request</p>
+              </div>
+            </div>
+            <div class="estimate-service-line">
+              <div>
+                <h5 id="estimateService">Project service</h5>
+                <p id="estimateBudget"></p>
+              </div>
+              <p class="estimate-amount" id="estimateLineAmount"></p>
+            </div>
+            <section class="estimate-scope" aria-labelledby="estimateScopeTitle">
+              <h5 id="estimateScopeTitle">Proposed scope</h5>
+              <ul class="estimate-list" id="estimateDeliverables"></ul>
+            </section>
+            <div class="estimate-total">
+              <div>
+                <p class="estimate-total-label">Estimated project total</p>
+                <p class="estimate-total-note" id="estimateTotalNote">A final quote follows scope confirmation.</p>
+              </div>
+              <strong class="estimate-total-amount" id="estimateAmount"></strong>
+            </div>
+            <p class="estimate-note" id="estimateNotes"></p>
+            <footer class="estimate-footer"><span>Seth · Digital Experience Designer</span><span>Thank you for considering working together.</span></footer>
+          </article>
           <div class="estimate-actions">
+            <button type="button" class="primary-button" id="downloadEstimatePdf">Download PDF</button>
             <button type="button" class="secondary-button" id="printEstimate">Print estimate</button>
             <a class="primary-button" id="sendBooking" href="#" target="_blank" rel="noreferrer" hidden>Continue booking on WhatsApp</a>
+            <p class="estimate-download-status" id="estimateDownloadStatus" role="status" aria-live="polite"></p>
           </div>
         </section>
         <div class="form-actions">
@@ -1040,13 +1124,33 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
         setFieldError(fieldName, 'Please select your estimated budget.');
         return false;
       }
-      if (value === 'custom' && !validateField('customBudget')) return false;
+      if ((value === 'custom' || customBudgetInput.value.trim()) && !validateField('customBudget')) return false;
     }
 
     if (fieldName === 'customBudget') {
       const amount = Number(value);
-      if (budgetRange.value === 'custom' && (!Number.isSafeInteger(amount) || amount < 1000 || amount > 50000000)) {
+      if (!value && budgetRange.value === 'custom') {
+        setFieldError(fieldName, 'Enter your exact budget.');
+        return false;
+      }
+      if (!value) {
+        setFieldError(fieldName, '');
+        return true;
+      }
+      if (!Number.isSafeInteger(amount) || amount < 1000 || amount > 50000000) {
         setFieldError(fieldName, 'Enter a whole-naira amount between ₦1,000 and ₦50,000,000.');
+        return false;
+      }
+      const selectedRange = {
+        under_25k: [1000, 24999],
+        '25k_50k': [25000, 50000],
+        '50k_100k': [50001, 100000],
+        '100k_250k': [100001, 250000],
+        '250k_500k': [250001, 499999],
+        over_500k: [500000, 50000000],
+      }[budgetRange.value];
+      if (selectedRange && (amount < selectedRange[0] || amount > selectedRange[1])) {
+        setFieldError(fieldName, 'Enter an amount that falls within the selected budget range.');
         return false;
       }
     }
@@ -1075,7 +1179,7 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
   function selectedBudgetPayload() {
     return {
       budget: budgetRange.value,
-      customBudget: budgetRange.value === 'custom' ? Number(customBudgetInput.value) : null,
+      customBudget: customBudgetInput.value.trim() ? Number(customBudgetInput.value) : null,
     };
   }
 
@@ -1083,18 +1187,39 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
     return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(amount);
   }
 
+  let activeEstimateInvoice = null;
+
+  function refreshEstimatePartyFields() {
+    const clientName = document.getElementById('clientName').value.trim();
+    const clientEmail = document.getElementById('clientEmail').value.trim();
+    const preferredDeadline = document.getElementById('deadline').value;
+    document.getElementById('estimateClient').textContent = activeEstimateInvoice
+      ? `${clientName}\n${clientEmail}`
+      : [clientName, clientEmail].filter(Boolean).join('\n') || 'Client details pending';
+    document.getElementById('estimateClient').style.whiteSpace = 'pre-line';
+    const issueDate = activeEstimateInvoice?.createdAt ?? new Date();
+    document.getElementById('estimateDate').textContent = new Date(issueDate)
+      .toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    document.getElementById('estimateDeadline').textContent = preferredDeadline
+      ? new Date(`${preferredDeadline}T00:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+      : 'Not provided';
+  }
+
   function renderEstimate(estimate, invoice = null) {
     estimatePreview.hidden = false;
-    document.getElementById('estimateKicker').textContent = invoice ? 'Draft estimate saved to your booking' : 'Budget-aligned draft estimate';
-    document.getElementById('estimateTitle').textContent = invoice ? 'Draft estimate' : 'Project estimate';
+    activeEstimateInvoice = invoice;
+    document.getElementById('estimateKicker').textContent = invoice ? 'Prepared following your project request' : 'Preliminary project estimate';
+    document.getElementById('estimateTitle').textContent = 'Draft estimate';
     document.getElementById('estimateReference').textContent = invoice ? invoice.number : 'PREVIEW';
-    document.getElementById('estimateClient').textContent = invoice
-      ? `${document.getElementById('clientName').value.trim()} · ${document.getElementById('clientEmail').value.trim()} · ${new Date(invoice.createdAt).toLocaleDateString()}`
-      : 'Final client and invoice details appear after the booking is saved.';
-    document.getElementById('estimateService').textContent = `${estimate.service} · ${estimate.budgetLabel}`;
-    document.getElementById('estimateAmount').textContent = estimate.amountNgn === null
-      ? 'Scope review required'
-      : `${formatNaira(estimate.amountNgn)}${invoice ? '' : ' · working estimate'}`;
+    refreshEstimatePartyFields();
+    document.getElementById('estimateService').textContent = estimate.service;
+    document.getElementById('estimateBudget').textContent = `Budget range selected: ${estimate.budgetLabel}`;
+    const amount = estimate.amountNgn === null ? null : formatNaira(estimate.amountNgn);
+    document.getElementById('estimateLineAmount').textContent = amount || 'To be confirmed';
+    document.getElementById('estimateAmount').textContent = amount || 'Scope review';
+    document.getElementById('estimateTotalNote').textContent = estimate.amountNgn === null
+      ? 'A written quote will follow a review of the project scope.'
+      : 'Preliminary estimate · Final amount subject to scope confirmation';
     const deliverables = document.getElementById('estimateDeliverables');
     deliverables.replaceChildren(...estimate.deliverables.map((item) => {
       const line = document.createElement('li');
@@ -1103,7 +1228,7 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
     }));
     document.getElementById('estimateNotes').textContent = invoice
       ? invoice.notes
-      : `${estimate.notes} This is a draft estimate only, not an issued tax invoice or payment request. Final scope and price require confirmation.`;
+      : `${estimate.notes} This is a preliminary estimate only. It is not a tax invoice, payment request, or commitment to begin work. Final scope, price, and terms require written confirmation.`;
 
     const sendBooking = document.getElementById('sendBooking');
     if (invoice) {
@@ -1128,11 +1253,18 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
   }
 
   async function refreshEstimatePreview() {
-    customBudgetField.hidden = budgetRange.value !== 'custom';
-    if (budgetRange.value !== 'custom') {
-      setFieldError('customBudget', '');
-    }
-    if (!serviceType.value || !budgetRange.value || (budgetRange.value === 'custom' && !validateField('customBudget'))) {
+    const budgetSelected = Boolean(budgetRange.value);
+    customBudgetField.hidden = !budgetSelected;
+    document.getElementById('customBudgetLabel').textContent = budgetRange.value === 'custom'
+      ? 'Your exact budget in naira'
+      : 'Your exact amount in naira (optional)';
+    document.getElementById('customBudgetHint').textContent = budgetRange.value === 'custom'
+      ? 'Enter the amount you have available so the estimate can be tailored to it.'
+      : 'Add an exact amount within your selected range to tailor the draft estimate, or leave this blank to use the range.';
+    const exactBudgetValid = !customBudgetInput.value.trim() && budgetRange.value !== 'custom'
+      ? true
+      : validateField('customBudget');
+    if (!serviceType.value || !budgetSelected || !exactBudgetValid) {
       estimatePreview.hidden = true;
       return;
     }
@@ -1150,22 +1282,243 @@ html:not(.experience-ready) .end .bk{animation:loaderFallbackReveal .85s var(--e
       renderEstimate(result.estimate);
     } catch (error) {
       if (requestNumber !== previewRequest) return;
+      activeEstimateInvoice = null;
       estimatePreview.hidden = false;
       document.getElementById('estimateKicker').textContent = 'Estimate unavailable';
       document.getElementById('estimateTitle').textContent = 'Please try again';
       document.getElementById('estimateReference').textContent = '';
       document.getElementById('estimateClient').textContent = '';
+      document.getElementById('estimateDate').textContent = '';
+      document.getElementById('estimateDeadline').textContent = '';
       document.getElementById('estimateService').textContent = serviceType.value;
+      document.getElementById('estimateBudget').textContent = '';
+      document.getElementById('estimateLineAmount').textContent = '';
       document.getElementById('estimateAmount').textContent = '';
+      document.getElementById('estimateTotalNote').textContent = '';
       document.getElementById('estimateDeliverables').replaceChildren();
       document.getElementById('estimateNotes').textContent = error.message || 'Could not prepare the estimate.';
       document.getElementById('sendBooking').hidden = true;
     }
   }
 
+  let pdfMakeLoadPromise;
+
+  function loadScript(source) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = source;
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = () => {
+        script.remove();
+        reject(new Error('The PDF tool could not be loaded. Check your connection and try again.'));
+      };
+      document.head.append(script);
+    });
+  }
+
+  async function getPdfMake() {
+    if (window.pdfMake?.createPdf && window.pdfMake?.vfs) return window.pdfMake;
+    if (!pdfMakeLoadPromise) {
+      pdfMakeLoadPromise = (async () => {
+        await loadScript('https://cdn.jsdelivr.net/npm/pdfmake@0.3.11/build/pdfmake.min.js');
+        await loadScript('https://cdn.jsdelivr.net/npm/pdfmake@0.3.11/build/vfs_fonts.js');
+        if (!window.pdfMake?.createPdf || !window.pdfMake?.vfs) {
+          throw new Error('The PDF tool did not finish loading. Please try again.');
+        }
+        return window.pdfMake;
+      })().catch((error) => {
+        pdfMakeLoadPromise = null;
+        throw error;
+      });
+    }
+    return pdfMakeLoadPromise;
+  }
+
+  function createEstimatePdfDefinition() {
+    const text = (id) => document.getElementById(id).textContent.trim();
+    const clientLines = text('estimateClient').split('\n').filter(Boolean);
+    const deliverables = [...document.querySelectorAll('#estimateDeliverables li')]
+      .map((item) => item.textContent.trim())
+      .filter(Boolean);
+
+    return {
+      info: {
+        title: `Seth draft estimate ${text('estimateReference')}`,
+        author: 'Seth — Digital Experience Designer',
+        subject: text('estimateService'),
+      },
+      pageSize: 'A4',
+      pageMargins: [48, 42, 48, 46],
+      defaultStyle: { font: 'Roboto', fontSize: 9, color: '#282321', lineHeight: 1.35 },
+      styles: {
+        brand: { fontSize: 18, bold: true, color: '#201b1b' },
+        brandRole: { fontSize: 7, color: '#766d67', characterSpacing: 1.1 },
+        badge: { fontSize: 7, bold: true, color: '#984d36', characterSpacing: 1.1 },
+        kicker: { fontSize: 8, color: '#766d67', characterSpacing: 1.2 },
+        title: { fontSize: 27, bold: false, color: '#201b1b' },
+        label: { fontSize: 7, bold: true, color: '#8a8179', characterSpacing: 1.1 },
+        value: { fontSize: 9, color: '#2c2724' },
+        section: { fontSize: 8, bold: true, color: '#766d67', characterSpacing: 1.1 },
+        amount: { fontSize: 12, bold: true, color: '#201b1b' },
+        total: { fontSize: 21, color: '#201b1b' },
+        note: { fontSize: 8, color: '#5e554e', lineHeight: 1.4 },
+        footer: { fontSize: 7, color: '#8a8179' },
+      },
+      content: [
+        {
+          columns: [
+            {
+              width: '*',
+              stack: [
+                { text: 'S  Seth', style: 'brand' },
+                { text: 'DIGITAL EXPERIENCE DESIGNER', style: 'brandRole', margin: [0, 3, 0, 0] },
+              ],
+            },
+            {
+              width: 'auto',
+              text: 'DRAFT · NOT PAYABLE',
+              style: 'badge',
+              alignment: 'right',
+              margin: [0, 6, 0, 0],
+            },
+          ],
+          columnGap: 16,
+          margin: [0, 0, 0, 20],
+        },
+        { canvas: [{ type: 'line', x1: 0, y1: 0, x2: 499, y2: 0, lineWidth: 0.7, lineColor: '#ded8cf' }], margin: [0, 0, 0, 20] },
+        {
+          columns: [
+            {
+              width: '*',
+              stack: [
+                { text: text('estimateKicker').toUpperCase(), style: 'kicker', margin: [0, 0, 0, 5] },
+                { text: 'Draft estimate', style: 'title' },
+              ],
+            },
+            {
+              width: 175,
+              stack: [
+                { text: 'REFERENCE', style: 'label', alignment: 'right' },
+                { text: text('estimateReference'), style: 'value', alignment: 'right', margin: [0, 5, 0, 0] },
+              ],
+            },
+          ],
+          columnGap: 16,
+          margin: [0, 0, 0, 18],
+        },
+        {
+          table: {
+            widths: ['*', '*', '*'],
+            body: [[
+              { stack: [{ text: 'PREPARED FOR', style: 'label', margin: [0, 0, 0, 5] }, ...clientLines.map((line) => ({ text: line, style: 'value' }))], margin: [0, 10, 10, 10] },
+              { stack: [{ text: 'ESTIMATE DATE', style: 'label', margin: [0, 0, 0, 5] }, { text: text('estimateDate'), style: 'value' }], margin: [10, 10, 0, 10] },
+              { stack: [{ text: 'PREFERRED DEADLINE', style: 'label', margin: [0, 0, 0, 5] }, { text: text('estimateDeadline'), style: 'value' }], margin: [10, 10, 0, 10] },
+            ]],
+          },
+          layout: {
+            hLineWidth: (index) => index === 0 || index === 1 ? 0.7 : 0,
+            vLineWidth: () => 0,
+            hLineColor: () => '#ded8cf',
+            paddingLeft: () => 0,
+            paddingRight: () => 0,
+            paddingTop: () => 0,
+            paddingBottom: () => 0,
+          },
+          margin: [0, 0, 0, 14],
+        },
+        {
+          table: {
+            widths: ['*', 'auto'],
+            body: [[
+              { stack: [{ text: text('estimateService'), bold: true, fontSize: 10 }, { text: text('estimateBudget'), color: '#766d67', fontSize: 8, margin: [0, 4, 0, 0] }], margin: [0, 11, 8, 11] },
+              { text: text('estimateLineAmount'), style: 'amount', alignment: 'right', margin: [8, 11, 0, 11] },
+            ]],
+          },
+          layout: {
+            hLineWidth: (index) => index === 0 || index === 1 ? 0.7 : 0,
+            vLineWidth: () => 0,
+            hLineColor: () => '#ded8cf',
+            paddingLeft: () => 0,
+            paddingRight: () => 0,
+            paddingTop: () => 0,
+            paddingBottom: () => 0,
+          },
+          margin: [0, 0, 0, 17],
+        },
+        { text: 'PROPOSED SCOPE', style: 'section', margin: [0, 0, 0, 9] },
+        {
+          ul: deliverables,
+          markerColor: '#c85e42',
+          fontSize: 9,
+          color: '#38322e',
+          margin: [0, 0, 0, 14],
+        },
+        {
+          table: {
+            widths: ['*', 'auto'],
+            body: [[
+              { stack: [{ text: 'ESTIMATED PROJECT TOTAL', style: 'label', margin: [0, 0, 0, 5] }, { text: text('estimateTotalNote'), color: '#766d67', fontSize: 8 }], margin: [0, 12, 8, 12] },
+              { text: text('estimateAmount'), style: 'total', alignment: 'right', margin: [8, 12, 0, 12] },
+            ]],
+          },
+          layout: {
+            hLineWidth: (index) => index === 0 || index === 1 ? 0.7 : 0,
+            vLineWidth: () => 0,
+            hLineColor: () => '#ded8cf',
+            paddingLeft: () => 0,
+            paddingRight: () => 0,
+            paddingTop: () => 0,
+            paddingBottom: () => 0,
+          },
+          margin: [0, 0, 0, 15],
+        },
+        {
+          table: { widths: ['*'], body: [[{ text: text('estimateNotes'), style: 'note', fillColor: '#f2eee8', margin: [10, 9, 10, 9] }]] },
+          layout: 'noBorders',
+          margin: [0, 0, 0, 18],
+        },
+        {
+          columns: [
+            { text: 'Seth · Digital Experience Designer', style: 'footer' },
+            { text: 'Thank you for considering working together.', style: 'footer', alignment: 'right' },
+          ],
+          columnGap: 12,
+          margin: [0, 9, 0, 0],
+        },
+      ],
+    };
+  }
+
+  async function downloadEstimatePdf() {
+    const button = document.getElementById('downloadEstimatePdf');
+    const status = document.getElementById('estimateDownloadStatus');
+    button.disabled = true;
+    status.textContent = 'Preparing your PDF…';
+    try {
+      const pdfMake = await getPdfMake();
+      const reference = document.getElementById('estimateReference').textContent.trim();
+      const filename = `${reference && reference !== 'PREVIEW' ? reference : 'Seth-Draft-Estimate'}.pdf`
+        .replace(/[^a-z0-9._-]/gi, '-');
+      await pdfMake.createPdf(createEstimatePdfDefinition()).download(filename);
+      status.textContent = 'Your PDF has been downloaded.';
+    } catch (error) {
+      status.textContent = error.message || 'Could not create the PDF. Please use Print estimate instead.';
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  document.getElementById('downloadEstimatePdf').addEventListener('click', downloadEstimatePdf);
+  document.getElementById('downloadEstimatePdf').addEventListener('focus', () => { getPdfMake().catch(() => {}); }, { once: true });
+  document.getElementById('downloadEstimatePdf').addEventListener('pointerenter', () => { getPdfMake().catch(() => {}); }, { once: true });
+  ['clientName', 'clientEmail', 'deadline'].forEach((fieldId) => {
+    document.getElementById(fieldId).addEventListener('input', () => {
+      if (!activeEstimateInvoice && !estimatePreview.hidden) refreshEstimatePartyFields();
+    });
+  });
   serviceType.addEventListener('change', refreshEstimatePreview);
   budgetRange.addEventListener('change', () => {
-    if (budgetRange.value !== 'custom') customBudgetInput.value = '';
     refreshEstimatePreview();
   });
   customBudgetInput.addEventListener('input', refreshEstimatePreview);
